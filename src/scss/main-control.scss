@@ -1,0 +1,122 @@
+@use "colors" as *;
+@use "fonts" as *;
+
+.contact-detail {
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
+  display: table-cell;
+  position: relative;
+
+
+  .contact-initials {
+    height: 40px;
+    width: 40px;
+    background: $colorBlue;
+    line-height: 40px;
+    border-radius: 50%;
+    font-weight: bold;
+    color: $colorLightGrey;
+    font-size: $font-14;
+    margin: 3px;
+
+    img {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  .confirm-contact-img {
+    position: absolute;
+    right: -5px;
+    top: 28px;
+    width: 14px;
+  }
+}
+
+.profile-div {
+  padding: 30px 50px;
+  box-shadow: 0 0 10px 0 $colorCCC;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  @media only screen and (max-width: 768px) {
+    padding: 15px;
+  }
+
+  img.eye_icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+}
+
+
+.block {
+  background: $colorWhite;
+  padding: 15px;
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 $colorGrey;
+
+  .clock-img {
+    img {
+      width: 24px;
+    }
+
+    span {
+      color: $colorBlue;
+      margin-left: 10px;
+      font-weight: bold;
+    }
+  }
+
+  &.coming-soon-block {
+    background: $colorLightPurple;
+    color: $colorDarkGrey;
+    cursor: default;
+
+    p, div, * {
+      color: $colorDarkGrey;
+      text-decoration: none;
+      cursor: default;
+    }
+  }
+
+  .hover-css {
+    @media only screen and (min-width: 768px) and (max-width: 1280px) {
+      min-height: 60px;
+    }
+  }
+
+}
+
+.vault-progress {
+  border-radius: 0;
+  height: 10px;
+  background: $colorDarkGrey;
+
+  .progress-bar {
+    background: $colorOrange;
+  }
+}
+
+
+.show-hide-text {
+  color: $colorBlue;
+  font-size: 12px;
+  font-weight: 600;
+  border-bottom: 2px solid $colorBlue;
+  outline: none;
+  margin-left: 20px;
+  cursor: pointer;
+  margin-top: 5px;
+  width: fit-content;
+
+  @media only screen and (max-width: 768px) {
+    margin: 15px 0 0 0;
+  }
+}
+

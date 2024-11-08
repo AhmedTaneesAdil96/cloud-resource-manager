@@ -1,0 +1,41 @@
+<mat-expansion-panel
+  [formGroup]="vnetForm"
+  style="background-color: #B0BEC5; color: black"
+>
+  <mat-expansion-panel-header>
+    <span>
+      <mat-panel-title class="fw-bold">
+        VNet {{ index + 1 }} - {{ vnetForm.get("resourceName")?.value || "" }}
+      </mat-panel-title></span
+    >
+  </mat-expansion-panel-header>
+
+  <mat-form-field appearance="outline" class="w-100">
+    <input
+      
+      class="form-control"
+      formControlName="resourceName"
+      matInput
+      placeholder="Enter VNet name"
+    />
+  </mat-form-field>
+
+  <button (click)="addSubnet()" color="accent" mat-raised-button>
+    Add Subnet
+  </button>
+  <button (click)="removeVNet()" color="warn" mat-raised-button>
+    Remove VNet
+  </button>
+
+
+  <div formArrayName="subnets">
+    <app-subnet
+      (remove)="removeSubnet($event)"
+      *ngFor="let subnet of subnets.controls; let subnetIndex = index"
+      [subnetForm]="subnet"
+      [subnetIndex]="subnetIndex"
+      [vnetIndex]="index"
+    >
+    </app-subnet>
+  </div>
+</mat-expansion-panel>

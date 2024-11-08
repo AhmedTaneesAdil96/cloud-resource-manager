@@ -1,0 +1,11 @@
+<mat-expansion-panel [expanded]="true" [formGroup]="nicForm" class="mt-4" style="background-color: #ECEFF1">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      NIC {{ nicIndex + 1 }} - {{ nicForm.get('resourceName')?.value || '' }}
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-form-field appearance="outline" class="w-100">
+    <input class="form-control" formControlName="resourceName" matInput placeholder="Enter NIC name"/>
+  </mat-form-field>
+  <button (click)="removeNic()" color="accent" mat-raised-button>remove</button>
+</mat-expansion-panel>

@@ -1,0 +1,26 @@
+::ng-deep .mat-form-field-appearance-fill .mat-label {
+  transform: translateY(0) !important;
+}
+
+mat-expansion-panel {
+  min-height: 80px;
+}
+
+mat-expansion-panel-header {
+  padding: 16px;
+}
+
+mat-form-field .mat-label {
+  transition: opacity 0.2s ease-out;
+}
+
+mat-form-field .mat-input-element {
+  padding-top: 0;
+  background-color: #C8E6C9;
+}
+
+
+.mat-form-field .mat-input-element:focus {
+  background-color: #C8E6C9;
+
+}
