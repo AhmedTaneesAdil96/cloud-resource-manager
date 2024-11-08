@@ -1,0 +1,16 @@
+@use "fonts" as *;
+@use "colors" as *;
+
+.vault-count-progress-bar-color {
+  .mat-progress-bar-fill::after {
+    background-color: $colorOrange;
+  }
+
+  .mat-progress-bar-buffer {
+    background: $colorDarkGrey;
+  }
+
+  .mat-progress-bar {
+    border-radius: 2px;
+  }
+}

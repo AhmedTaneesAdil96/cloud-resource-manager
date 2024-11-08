@@ -1,0 +1,108 @@
+@use "colors" as *;
+@use "fonts" as *;
+
+~ .security-select {
+  .mat-form-field-flex {
+    background: transparent;
+    border: 1px solid $colorShockBlue;
+    border-radius: 0;
+  }
+
+  .mat-select-value-text {
+    color: $colorShockBlue;
+  }
+
+  .mat-form-field-infix {
+    padding: 0;
+  }
+}
+
+.security-select {
+  text-align: center;
+
+  .mat-form-field {
+    width: 30%;
+    @media only screen and (min-width: 992px) and (max-width: 1400px) {
+      width: 50%;
+      margin: 5px 0;
+    }
+
+    @media only screen and (max-width: 767px) {
+      width: 50%;
+      margin: 5px 0;
+    }
+
+    .mat-form-field-wrapper {
+      padding: 0;
+    }
+
+    .mat-form-field-flex > .mat-form-field-infix {
+      padding-right: 5px;
+      border: 2px solid $colorShockBlue;
+      margin: 0 5px;
+      border-radius: 20px;
+      background: $colorWhite;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+      padding: 0;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+      border: none;
+    }
+
+    .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+      transform: translateY(0);
+    }
+
+    .mat-select-value {
+      font-weight: bold;
+      color: $colorShockBlue;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .mat-form-field-ripple {
+      opacity: 0;
+      background: $colorShockBlue;
+    }
+
+    .mat-select-arrow {
+      color: $colorShockBlue !important;
+    }
+
+    .mat-form-field-underline {
+      opacity: 0;
+    }
+  }
+
+  .security-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media only screen and (min-width: 992px) and (max-width: 1400px) {
+      display: block;
+    }
+    @media only screen and (max-width: 767px) {
+      display: block;
+    }
+  }
+}
+
+.security-bg {
+  background: $colorVoilet;
+
+}
+
+.top-radius {
+  border-radius: 20px;
+}
+
+.bottom-radius {
+  border-radius: 20px;
+}
+
+.mat-option-text {
+  color: $colorDarkGrey;
+}

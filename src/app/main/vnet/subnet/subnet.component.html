@@ -1,0 +1,26 @@
+<mat-expansion-panel [expanded]="true" [formGroup]="subnetForm" class="mt-4" style="background-color: #CFD8DC">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Subnet {{ subnetIndex + 1 }} - {{ subnetForm.get('resourceName')?.value || '' }}
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <mat-form-field appearance="outline" class="w-100">
+
+    <input class="form-control" formControlName="resourceName" matInput placeholder="Enter Subnet name"/>
+  </mat-form-field>
+
+  <button (click)="addNIC()" color="accent" mat-raised-button>Add NIC</button>
+  <button (click)="removeSubnet()" color="accent" mat-raised-button>remove</button>
+
+  <div class="row">
+    <div *ngFor="let nic of nics?.controls; let nicIndex = index" class="col-12 col-md-6 col-lg-4" formArrayName="nics">
+      <app-nic
+        (removeNIC)="removeNic($event)"
+        [nicForm]="nic"
+        [nicIndex]="nicIndex"
+        [subnetIndex]="subnetIndex">
+      </app-nic>
+    </div>
+  </div>
+</mat-expansion-panel>

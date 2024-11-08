@@ -1,0 +1,14 @@
+::ng-deep .mat-form-field-appearance-fill .mat-label {
+  transform: translateY(0) !important;
+}
+
+mat-form-field .mat-input-element {
+  padding-top: 0;
+  background-color: #F5F5F5;
+}
+
+
+.mat-form-field .mat-input-element:focus {
+  background-color: #F5F5F5 !important;
+
+}

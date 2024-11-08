@@ -1,0 +1,25 @@
+<div class="container-fluid p-2">
+  <div class="row align-items-center">
+
+    <div class="col-7 d-flex justify-content-start">
+      <button (click)="openResourceDialog(RESOURCE_TYPES.VNET)" class="btn btn-dark">Add VNet</button>
+
+    </div>
+  </div>
+</div>
+
+
+<div [formGroup]="cloudForm" class="container">
+  <div formArrayName="vnets">
+    <mat-accordion>
+      <app-vnet
+        (change)="updateDynamicJson()"
+        (remove)="removeVNet(vnetIndex)"
+        *ngFor="let vnet of vnets.controls; let vnetIndex = index"
+        [index]="vnetIndex"
+        [vnetForm]="vnet">
+      </app-vnet>
+    </mat-accordion>
+  </div>
+</div>
+

@@ -1,0 +1,51 @@
+<h2 class="text-center mb-4" mat-dialog-title>Add {{ resourceType }}</h2>
+
+<div class="container-fluid d-flex justify-content-center align-items-center">
+  <mat-dialog-content class="p-4">
+    <form [formGroup]="resourceForm">
+
+      <!-- VNet Name Field -->
+      <mat-form-field appearance="outline" class="w-100 mb-4">
+        <mat-label>{{ resourceType }} Name</mat-label>
+        <input class="form-control p-2" formControlName="resourceName" matInput required/>
+      </mat-form-field>
+
+      <!-- Tags Section -->
+      <div class="mb-4" formArrayName="tags">
+        <h4 class="mb-3">Tags</h4>
+        <div *ngFor="let tag of tags.controls; let i = index" [formGroupName]="i"
+             class="d-flex mb-3 align-items-center">
+
+          <mat-form-field appearance="outline" class="flex-grow-1 me-2">
+            <mat-label>Key</mat-label>
+            <input class="form-control p-2" formControlName="key" matInput required/>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="flex-grow-1">
+            <mat-label>Value</mat-label>
+            <input class="form-control p-2" formControlName="value" matInput required/>
+          </mat-form-field>
+
+
+          <!-- Remove Tag Button with Material Icon -->
+          <button (click)="removeTag(i)" class="mb-4 btn btn-outline-danger ms-4 c"
+                  style="min-width: 40px; height: 40px; padding: 0;">
+            <span>-</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Add Tag Button -->
+      <button (click)="addTag()" class="btn btn-outline-secondary btn-block mb-4" mat-button>
+        <mat-icon>add</mat-icon>
+        Add Tag
+      </button>
+    </form>
+  </mat-dialog-content>
+</div>
+
+<!-- Dialog Actions -->
+<mat-dialog-actions class="d-flex justify-content-center p-4">
+  <button (click)="onCancel()" class="btn btn-outline-danger me-2">Cancel</button>
+  <button (click)="onSubmit()" [disabled]="resourceForm.invalid" class="btn btn-success ">Create
+  </button>
+</mat-dialog-actions>

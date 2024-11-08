@@ -1,0 +1,112 @@
+@use "fonts" as *;
+@use "colors" as *;
+
+.shared-with-you-container {
+  .shared-background {
+    background: url('../assets/common/bg-effect.png') $colorLightPurple no-repeat right;
+    background-size: contain;
+    margin: 0;
+  }
+
+  .invisible-div {
+    padding-top: 200px;
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      padding-top: 20px;
+    }
+    @media only screen and (max-width: 767px) {
+      padding-top: 20px;
+    }
+  }
+
+  .vault-title {
+    display: block;
+
+    span:first-child {
+      width: 40%;
+      @media screen and (min-width: 767px) and (max-width: 1400px) {
+        width: 100%;
+        text-align: left;
+      }
+    }
+
+    span:last-child {
+      width: 60%;
+      @media screen and (min-width: 767px) and (max-width: 1400px) {
+        width: 100%;
+        text-align: left;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .shared-ul {
+    padding: 0;
+
+    li {
+      display: flex;
+      padding: 15px 0;
+      border-bottom: 1px solid #ddd;
+
+      .span1 {
+        width: 35%;
+        display: block;
+        text-align: left;
+        color: $colorBlue;
+        font-size: $font-12;
+        font-weight: bold;
+      }
+
+      .span2 {
+        width: 65%;
+        display: block;
+        text-align: left;
+        color: $colorBlue;
+        font-size: $font-12;
+      }
+    }
+
+    li.mobile-show {
+      display: none;
+      @media only screen and (max-width: 767px) {
+        display: flex;
+      }
+    }
+  }
+
+  .ul-file {
+    padding: 0;
+
+    li {
+      color: $colorBlue;
+      font-weight: 600;
+      font-size: $font-12;
+      list-style: none;
+      width: 100%;
+      margin-bottom: 10px;
+      border-bottom: 1px solid $colorGrey;
+      padding-bottom: 30px;
+    }
+  }
+
+  .pdf-section {
+    .main-heading {
+      color: $colorBlue;
+      text-align: center;
+      font-size: $font-30;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    .pdf-headings {
+      color: $colorBlue;
+      font-weight: bold;
+      font-size: $font-24;
+      width: 100%;
+      text-transform: uppercase;
+    }
+  }
+
+}
